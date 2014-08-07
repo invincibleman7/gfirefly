@@ -1,0 +1,9 @@
+twisted
+gevent
+gtwisted
+flask
+zope.interface
+DBUtils
+affinity
+python-memcached
+MySQL-python

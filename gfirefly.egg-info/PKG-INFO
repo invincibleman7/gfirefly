@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: gfirefly
+Version: 0.1.5alpha
+Summary: Achieve firefly based on gtwisted
+Home-page: http://www.9miao.com/
+Author: lanjinmin
+Author-email: zhuiming.mu@gmail.com
+License: MIT
+Description: Achieve firefly based on gtwisted
+Keywords: gevent gtwisted pb firefly gevent
+Platform: UNKNOWN
