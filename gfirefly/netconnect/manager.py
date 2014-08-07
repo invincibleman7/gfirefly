@@ -21,14 +21,14 @@ class ConnectionManager:
         
     def getNowConnCnt(self):
         '''获取当前连接数量'''
-        return len(self._connections.items())
+        return len(self._connections)
     
     def addConnection(self, conn):
         '''加入一条连接
         @param _conn: Conn object
         '''
         _conn = Connection(conn)
-        if self._connections.has_key(_conn.id):
+        if _conn.id in self._connections:
             raise Exception("系统记录冲突")
         self._connections[_conn.id] = _conn
             

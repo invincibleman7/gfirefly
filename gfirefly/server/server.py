@@ -71,7 +71,7 @@ class FFServer:
             reactor.listenTCP(netport,self.netfactory)
             
         if webport:
-            self.webroot = Flask("servername")
+            self.webroot = Flask(self.servername)
             GlobalObject().webroot = self.webroot
             reactor.listenWSGI(webport, self.webroot)
             
@@ -106,7 +106,7 @@ class FFServer:
         if masterconf:
             masterport = masterconf.get('rootport')
             masterhost = masterconf.get('roothost')
-            self.master_remote = RemoteObject(servername)
+            self.master_remote = RemoteObject(self.servername)
             addr = ('localhost',masterport) if not masterhost else (masterhost,masterport)
             self.master_remote.connect(addr)
             GlobalObject().masterremote = self.master_remote

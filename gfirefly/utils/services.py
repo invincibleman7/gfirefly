@@ -31,10 +31,11 @@ class Service(object):
     def mapTarget(self, target):
         """Add a target to the service."""
         key = target.__name__
-        if self._targets.has_key(key):
+        if key in self._targets:
             exist_target = self._targets.get(key)
-            raise "target [%d] Already exists,\
+            info = "target [%d] Already exists,\
             Conflict between the %s and %s"%(key,exist_target.__name__,target.__name__)
+            raise KeyError(info)
         self._targets[key] = target
 
     def unMapTarget(self, target):
@@ -76,10 +77,11 @@ class CommandService(Service):
         """Add a target to the service.
         """
         key = int((target.__name__).split('_')[-1])
-        if self._targets.has_key(key):
+        if key in self._targets:
             exist_target = self._targets.get(key)
-            raise "target [%d] Already exists,\
+            info = "target [%d] Already exists,\
             Conflict between the %s and %s"%(key,exist_target.__name__,target.__name__)
+            raise KeyError(info)
         self._targets[key] = target
             
     def unMapTarget(self, target):
