@@ -19,7 +19,7 @@ class MemObject:
     >>>        self.nickname = u''
     >>>        self.guanqia = 1000
     >>> mcharacter = Mcharacter(1,'character:1',mclient)
-    >>> mcharacter.name='lan'
+    >>> mcharacter.nickname='lan'
     >>> mcharacter.insert()
     >>> mcharacter.get('nickname')
     lan
@@ -40,7 +40,7 @@ class MemObject:
         if isinstance(keyname, basestring):
             return str(''.join([self._name,':',keyname]))
         else:
-            raise "type error"
+            raise TypeError("key must be str")
         
     def locked(self):
         '''检测对象是否被锁定
